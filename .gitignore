@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+dist/
+html_files/
+documents.json
+favorites.json
+coverage/

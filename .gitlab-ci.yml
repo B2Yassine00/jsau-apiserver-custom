@@ -1,0 +1,19 @@
+default:
+  image: node:20-alpine
+
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+
+tests:
+  script:
+   - npm ci --cache .npm --prefer-offline
+   - npm run test:ci
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    policy: pull-push
+    paths:
+      - .npm/
+  coverage: /All files[^\|]*\|[^\|]*\s+([\d\.]+)/

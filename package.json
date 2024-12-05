@@ -1,0 +1,35 @@
+{
+  "name": "jsau-apiserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "babel . -d dist",
+    "lint": "eslint . src/*.js",
+    "lint:fix": "eslint --fix",
+    "test:ci": "jest",
+    "pretest:ci": "npm run lint",
+    "posttest": "npm run lint",
+    "start": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.21.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.25.6",
+    "@babel/core": "7.25.2",
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@babel/preset-env": "7.25.4",
+    "@eslint/js": "9.11.1",
+    "babel-jest": "29.7.0",
+    "eslint": "9.11.1",
+    "eslint-config-usecases": "3.1.0",
+    "jest": "29.7.0",
+    "morgan": "1.10.0",
+    "supertest": "7.0.0"
+  }
+}
